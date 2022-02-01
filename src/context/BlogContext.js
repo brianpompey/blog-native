@@ -7,7 +7,7 @@ export const BlogProvider = ({ children }) => {
     const [blogPosts, setBlogPosts] = useState([]);
 
     const addBlogPost = () => {
-        setBlogPosts([...blogPosts, {  title: `Blog Post #${blogPost.length + 1}` } ]);
+        setBlogPosts([...blogPosts, {  title: `Blog Post #${blogPosts.length + 1}` } ]);
     }
     // const blogPosts = [
     //     { title: 'Blog Post #1' },
@@ -15,7 +15,7 @@ export const BlogProvider = ({ children }) => {
     // ];
 
     return (
-        <BlogContext.Provider value={blogPosts} >
+        <BlogContext.Provider value={{data: blogPosts, addBlogPost }} >
             {children}
         </BlogContext.Provider>
     )
